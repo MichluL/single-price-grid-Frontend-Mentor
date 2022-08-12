@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+:root {
+     --clr_cyan: hsl(179, 62%, 43%);
+     --clr_bright_yellow: hsl(71, 73%, 54%);
+     --clr_background: hsl(204, 43%, 93%);
+     --clr_text: hsl(218, 22%, 67%);
+}
+body {
+     font-family: "Karla", sans-serif;
+     height: 100vh;
+     display: grid;
+     place-content: center;
+     background-color: hsl(204, 43%, 93%);
+}
+.container_price {
+     max-width: 630px;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-areas:
+          "single-col single-col"
+          "half-col_1 half_col_2";
+     border-radius: 1rem;
+     overflow: hidden;
+}
+.price_single_column {
+     background-color: #fff;
+     padding: 2rem;
+     grid-area: single-col;
+}
+.single_column_title {
+     color: var(--clr_cyan);
+     margin-bottom: 2rem;
+}
+.single_column_subtitle {
+     color: var(--clr_bright_yellow);
+     margin-bottom: 1.1rem;
+}
+.single_column_description {
+     color: var(--clr_text);
+     line-height: 1.5;
+}
+.half-col_1 {
+     grid-area: half_col_1;
+}
+.half_col_2 {
+     grid-area: half_col_2;
+}
+.price_half_column {
+     background-color: hsl(179, 62%, 43%);
+     padding: 2rem;
+     color: #fff;
+}
+.light_bg_color {
+     background-color: hsla(179, 62%, 43%, 0.7);
+}
+.half_column_price {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     margin: 1rem;
+}
+.price {
+     font-size: 2rem;
+     font-weight: 700;
+}
+.month {
+     color: hsla(0, 0%, 100%, 0.5);
+}
+.half_price_button {
+     width: 100%;
+     padding-block: 1rem;
+     border: none;
+     border-radius: 5px;
+     background-color: var(--clr_bright_yellow);
+     color: #fff;
+     font-weight: 700;
+     font-size: 0.9rem;
+     margin-top: 2rem;
+     box-shadow: 0 10px 10px 1px hsla(0, 0%, 0%, 0.1);
+}
+.description_col_2 {
+     margin-top: 1rem;
+     font-size: 0.85rem;
+     line-height: 1.4;
+     color: hsla(0, 0%, 100%, 0.7);
+     width: 80%;
+}
+
+@media (max-width: 500px) {
+     body{
+          height: auto;
+     }
+     .container_price {
+          max-width: 300px;
+          height: fit-content;
+          display: grid;
+          grid-template-columns: 1fr;
+          /* grid-template-rows: repeat(3, 1fr auto auto); */
+          grid-template-areas:
+               "single-col"
+               "half-col_1"
+               "half_col_2";
+          margin: 1rem;
+     }
+}
